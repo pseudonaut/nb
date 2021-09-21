@@ -11,8 +11,8 @@ tcoins = [
 
 print_out = False
 
-# factors = ['ema_1', 'ema_2', 'ema_3', 'ema_4']
-factors = ['ema_1_diff', 'ema_2_diff', 'ema_3_diff', 'ema_4_diff']
+factors = ['ema_1', 'ema_2', 'ema_3', 'ema_4']
+# factors = ['ema_1_diff', 'ema_2_diff', 'ema_3_diff', 'ema_4_diff']
 
 print(factors)
 
@@ -43,4 +43,8 @@ for coin in tcoins:
 
     return_data = generate_returns(df_test, predicted_y)
 
-    print(coin, accuracy_score, return_data[1], return_data[2], return_data[3])
+    if print_out:
+        generate_chart(df_test, predicted_y, coin, factors)
+        time.sleep(1)
+
+    print(coin, accuracy_score)
