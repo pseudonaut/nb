@@ -47,4 +47,4 @@ for coin in tcoins:
         generate_chart(df_test, predicted_y, coin, factors)
         time.sleep(1)
 
-    print(coin, accuracy_score)
+    print(coin, round(accuracy_score, 3))
